@@ -1,0 +1,3 @@
+.vagrant/
+script/commit.sh
+.git/
