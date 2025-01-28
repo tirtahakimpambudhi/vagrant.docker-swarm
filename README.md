@@ -28,8 +28,8 @@ This project provides a Vagrant-based environment to set up a Docker Swarm clust
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/docker-swarm-vagrant.git
-   cd docker-swarm-vagrant
+   git clone https://github.com/tirtahakimpambudhi/vagrant.docker-swarm.git
+   cd vagrant.docker-swarm
    ```
 
 2. **Bring up the Vagrant Environment**
