@@ -9,7 +9,7 @@ sudo apt-get update -y
 
 # Install Net Tools
 echo "Installing net-tools..."
-sudo apt install -y net-tools
+sudo apt install -y net-tools dos2unix  
 
 # Install JSON Processor (jq)
 echo "Installing jq..."
