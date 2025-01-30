@@ -4,21 +4,21 @@ servers=[
     :ip => "192.168.100.10",
     :box => "ubuntu/jammy64",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 1
   },
   {
     :hostname => "worker-1",
     :ip => "192.168.100.11",
     :box => "ubuntu/jammy64",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 1
   },
   {
     :hostname => "worker-2",
     :ip => "192.168.100.12",
     :box => "ubuntu/jammy64",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 1
   }
 ]
 Vagrant.configure(2) do |config|
@@ -44,6 +44,7 @@ Vagrant.configure(2) do |config|
        # If hostname is 'manager', initialize Docker Swarm
        node.vm.provision "shell", inline: <<-SHELL
          echo "Running swarm init for manager..."
+         dos2unix  shared/script/*.sh
          chmod +x shared/script/init_swarm.sh
          bash shared/script/init_swarm.sh
        SHELL
@@ -51,6 +52,7 @@ Vagrant.configure(2) do |config|
        # If hostname is 'worker', join Docker Swarm
        node.vm.provision "shell", inline: <<-SHELL
          echo "Running swarm join for worker..."
+         dos2unix shared/script/*.sh
          chmod +x shared/script/join_swarm.sh
          bash shared/script/join_swarm.sh
        SHELL
